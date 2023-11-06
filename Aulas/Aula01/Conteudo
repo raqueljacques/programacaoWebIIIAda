@@ -1,0 +1,69 @@
+_Parte 4: Modelagem API REST_
+
+_Recursos (Endpoints):_
+
+-   _`/api/produtos`_: Representa a coleção de produtos.
+-   _`/api/produtos/{id}`_: Representa um produto específico com um ID único.
+
+_Métodos HTTP:_
+
+-   _`GET /api/produtos`_: Recupera a lista de todos os produtos.
+-   _`GET /api/produtos/{id}`_: Recupera detalhes de um produto específico por ID.
+-   _`POST /api/produtos`_: Cria um novo produto.
+-   _`PUT /api/produtos/{id}`_: Atualiza os detalhes de um produto existente.
+-   _`DELETE /api/produtos/{id}`_: Exclui um produto existente.
+
+CRUD (Create / Retrieve / Update / Delete);
+
+_Estrutura de Dados do Produto (JSON):_
+
+```
+{
+    "id": 1,
+    "nome": "Produto de Exemplo",
+    "descricao": "Uma descrição detalhada do produto",
+    "preco": 50.00,
+    "estoque": 100
+}
+```
+
+Aqui estão exemplos de solicitações HTTP para a API de produtos:
+
+-   _Recuperar todos os produtos (GET):_
+    ```
+    GET /api/produtos
+    ```
+-   _Recuperar um produto específico (GET):_
+    ```
+    GET /api/produtos/1
+    ```
+-   _Criar um novo produto (POST):_
+    ```
+    POST /api/produtos
+    Content-Type: application/json
+
+    {
+        "nome": "Novo Produto",
+        "descricao": "Descrição do Novo Produto",
+        "preco": 29.99,
+        "estoque": 50
+    }
+    ```
+-   _Atualizar um produto existente (PUT):_
+    ```
+    PUT /api/produtos/1
+    Content-Type: application/json
+
+    {
+        "nome": "Produto Atualizado",
+        "descricao": "Descrição Atualizada",
+        "preco": 34.99,
+        "estoque": 75
+    }
+    ```
+-   _Excluir um produto existente (DELETE):_
+    ```
+    DELETE /api/produtos/ 1
+    ```
+
+Esta é uma estrutura básica para modelagem de uma API REST para gerenciar produtos. Lembre-se de que a autenticação, autorização e validações adequadas devem ser implementadas, dependendo das necessidades do seu sistema. Além disso, é importante seguir as melhores práticas de design de API REST, como usar os códigos de status HTTP apropriados e estruturar as URLs de forma lógica.
